@@ -133,4 +133,76 @@ When a conflict arises:
 
 Happy coding and collaborating! If you have questions, ask during the session or raise issues on GitHub.
 
+Sure! Here's an additional section for your Markdown file that covers **how to revert changes** in Git and GitHub, useful for students learning about collaboration and version control:
+
+## 10. Reverting Changes
+
+Mistakes happen—and Git makes it easy to revert them safely. Let’s learn how to undo changes in different scenarios.
+
+### 🧯 A. Undo a Local Commit (Before Push)
+
+If you've made a commit but haven’t pushed it yet, and you want to undo it:
+
+```sh
+git reset --soft HEAD~1
+```
+
+- This keeps your changes in the staging area so you can recommit or modify.
+
+To delete the commit **and** unstage changes:
+
+```sh
+git reset --mixed HEAD~1
+```
+
+To delete the commit and discard all changes:
+
+```sh
+git reset --hard HEAD~1
+```
+
+> ⚠ Use `--hard` with caution: It deletes all local changes without recovery.
+
+### 🌀 B. Revert a Pushed Commit (Using `git revert`)
+
+You can undo a pushed commit by creating a new commit that reverses the changes:
+
+```sh
+git revert <commit-hash>
+```
+
+- This is **safe** for shared branches like `main` because it doesn’t rewrite history.
+- After reverting, push the changes:
+
+```sh
+git push origin branch-name
+```
+
+### 🔁 C. Using GitHub Revert (via UI)
+
+GitHub lets you revert a merged PR directly:
+
+1. Go to the original PR.
+2. Click the **“Revert”** button (visible after merge).
+3. GitHub creates a new PR with reversed changes.
+4. Review and merge it.
+
+### 📌 Extra: Revert a Merge Commit
+
+If you want to revert a **merge commit**, add `-m 1` to specify the parent branch:
+
+```sh
+git revert -m 1 <merge-commit-hash>
+```
+
+> `-m` tells Git which side to keep base from (usually `1` = main branch).
+
+## ✅ Best Practices for Reverting
+
+- Communicate with your team before reverting shared changes.
+- Always use `git revert` instead of `git reset` when working on shared/public branches.
+- Avoid using `git push --force` unless you know exactly what you're doing.
+
+Let me know if you'd like this added to the same `.md` file or presented differently!
+
 Sources
