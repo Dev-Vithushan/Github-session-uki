@@ -6,7 +6,7 @@ Welcome to the workshop on **GitHub merging** and **PR conflict resolution**! Th
 - Introduction
 - Setting Up the Repository
 - Forking and Cloning
-- Creating a New Branch
+- Creating a New Branchgit push 
 - Making Changes
 - Creating a Pull Request (PR)
 - Simulating a Merge Conflict
