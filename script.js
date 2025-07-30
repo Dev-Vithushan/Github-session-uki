@@ -1,6 +1,2 @@
-
-Thusiadd
-
 Kiruthuya
 abi-mohan
-
